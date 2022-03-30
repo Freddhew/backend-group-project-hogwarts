@@ -9,16 +9,15 @@ const routerLogin =      require("./Api/Login-Api");
 const routerStaff =       require("./Api/Staff-Api");
 
 const app = express();
-const port = 8080;
+const port = 5000;
 
 app.use(bodyParser.json());
-app.use(handleStaticFiles);
+
 
 const handleStaticFiles = express.static(
   path.join(__dirname, "..", "client", "build")
 );
-
-app.use("", routes);
+app.use(handleStaticFiles);
 app.use(routerApply);
 app.use(routerCourses);
 app.use(routerEducation);
