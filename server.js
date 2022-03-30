@@ -5,19 +5,26 @@ const path = require("path");
 const routerApply =       require("./Api/Apply-Api");
 const routerCourses =     require("./Api/Courses-Api");
 const routerEducation =   require("./Api/Education-Api");
-const routerLogin =      require("./Api/Login-Api");
+const routerLogin =       require("./Api/Login-Api");
 const routerStaff =       require("./Api/Staff-Api");
 
 const app = express();
 const port = 5000;
+<<<<<<< HEAD
+=======
+const handleStaticFiles = express.static(path.join(__dirname, "..", "group-project-client", "build"));
+>>>>>>> 56310181addeb9c69958e22b6de89b34dcb4965f
 
 app.use(bodyParser.json());
 
 
+<<<<<<< HEAD
 const handleStaticFiles = express.static(
   path.join(__dirname, "..", "client", "build")
 );
 app.use(handleStaticFiles);
+=======
+>>>>>>> 56310181addeb9c69958e22b6de89b34dcb4965f
 app.use(routerApply);
 app.use(routerCourses);
 app.use(routerEducation);

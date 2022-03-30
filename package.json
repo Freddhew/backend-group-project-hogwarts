@@ -58,7 +58,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
+<<<<<<< HEAD
   "proxy":"https://localhost:5000",
+=======
+  "proxy": "https:localhost:5000",
+>>>>>>> 56310181addeb9c69958e22b6de89b34dcb4965f
   "author": "",
   "license": "ISC",
   "description": "Server for Hogwarts",

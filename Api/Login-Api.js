@@ -1,25 +1,25 @@
 const express = require("express");
-const routerLoggin = express.Router();
+const routerLogin = express.Router();
 
 const credentials = { secretUser: "user", secretPassword: "password" };
 
 let authorized = true;
 
-let logginUser = "";
-let logginPassword = "";
+let loginUser = "";
+let loginPassword = "";
 
-routerLoggin.post("/Loggin", (request, response) => {
+routerLogin.post("/Login", (request, response) => {
   console.log({
     method: request.method,
     body: request.body,
   });
 
-  logginUser = request.body.user;
-  logginPassword = request.body.passWord;
+  loginUser = request.body.user;
+  loginPassword = request.body.passWord;
 
   if (
-    credentials.secretUser === logginUser &&
-    credentials.secretPassword === logginPassword
+    credentials.secretUser === loginUser &&
+    credentials.secretPassword === loginPassword
   ) {
     response.json({
       status: "success",
@@ -35,4 +35,4 @@ routerLoggin.post("/Loggin", (request, response) => {
   }
 });
 
-module.exports = routerLoggin;
+module.exports = routerLogin;
