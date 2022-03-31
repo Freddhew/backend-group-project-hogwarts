@@ -16,7 +16,7 @@ let staffs = [
     lastName: "White",
     yrke: "lärare",
     email: "maria.white@gmail.com",
-    banknr: 3456 - 5555,
+    banknr: 1234 - 5555,
   },
   {
     id: 75412457842,
@@ -24,7 +24,7 @@ let staffs = [
     lastName: "Winqvist",
     yrke: "Utbildningsledare",
     email: "Alexander.Wingqvist@altavista.com",
-    banknr: 7894 - 5555,
+    banknr: 5566 - 5555,
   },
   {
     id: 754124451240,
@@ -32,7 +32,7 @@ let staffs = [
     lastName: "Olsson",
     yrke: "Utbildningsledare",
     email: "ida.olsson@learnpoint.com",
-    banknr: 7894 - 5555,
+    banknr: 3366 - 5555,
   },
 ];
 
