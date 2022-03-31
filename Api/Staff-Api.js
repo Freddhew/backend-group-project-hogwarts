@@ -40,7 +40,7 @@ let list = [
   },
 ];
 
-router.get("/Staff", (req, res) => {
+router.get("/staff", (req, res) => {
   console.log({
     method: req.method,
   });
@@ -52,7 +52,7 @@ router.get("/Staff", (req, res) => {
   });
 });
 
-router.post("/Staff", (req, res) => {
+router.post("/staff", (req, res) => {
   console.log({
     method: req.method,
     body: req.body,
@@ -76,7 +76,7 @@ router.post("/Staff", (req, res) => {
   });
 });
 
-router.put("/Staff/:staffId", (req, res) => {
+router.put("/staff/:staffId", (req, res) => {
   const staffId = Number(req.params.staffId);
   const fn = req.body.fn;
   const ln = req.body.ln;
@@ -108,7 +108,7 @@ router.put("/Staff/:staffId", (req, res) => {
   });
 });
 
-router.delete("/Staff/:staffId", (req, res) => {
+router.delete("/staff/:staffId", (req, res) => {
   const staffId = req.params.staffId;
   const staffIndex = list.findIndex((staff) => staff.id == staffId);
 
