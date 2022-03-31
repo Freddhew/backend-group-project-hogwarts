@@ -13,7 +13,7 @@ const port = 5000;
 const handleStaticFiles = express.static(path.join(__dirname, "..", "group-project-client", "build"));
 
 app.use(bodyParser.json());
-
+app.use(handleStaticFiles);
 
 app.use(routerApply);
 app.use(routerCourses);
