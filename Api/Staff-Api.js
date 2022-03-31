@@ -1,35 +1,39 @@
 const express = require("express");
 const router = express.Router();
+const bodyParser =require('body-parser')
+
+const app = express()
+app.use(bodyParser.json())
 
 let staffs = [
   {
     id: 98573215314,
-    firstName: "Olle",
-    lastName: "Hockeyproffs",
+    fn: "Olle",
+    ln: "Hockeyproffs",
     yrke: "lärare",
     email: "olle@outlook.com",
     banknr: 1234 - 5555,
   },
   {
     id: 789452487568,
-    firstName: "Maria",
-    lastName: "White",
+    fn: "Maria",
+    ln: "White",
     yrke: "lärare",
     email: "maria.white@gmail.com",
     banknr: 1234 - 5555,
   },
   {
     id: 75412457842,
-    firstName: "Alexander",
-    lastName: "Winqvist",
+    fn: "Alexander",
+    ln: "Winqvist",
     yrke: "Utbildningsledare",
     email: "Alexander.Wingqvist@altavista.com",
     banknr: 5566 - 5555,
   },
   {
     id: 754124451240,
-    firstName: "Ida",
-    lastName: "Olsson",
+    fn: "Ida",
+    ln: "Olsson",
     yrke: "Utbildningsledare",
     email: "ida.olsson@learnpoint.com",
     banknr: 3366 - 5555,
@@ -56,8 +60,8 @@ router.post("/Staff", (request, response) => {
 
   const staff = {
     id: request.body.id,
-    firstName: request.body.firstName,
-    lastName: request.body.lastName,
+    fn: request.body.fn,
+    ln: request.body.ln,
     yrke: request.body.yrke,
     email: request.body.email,
     banknr: request.body.banknr,
@@ -74,16 +78,16 @@ router.post("/Staff", (request, response) => {
 
 router.put("/Staff/:staffId", (request, response) => {
   const staffId = Number(request.params.staffId);
-  const firstName = request.body.firstName;
-  const lastName = request.body.lastName;
+  const fn = request.body.fn;
+  const ln = request.body.ln;
   const yrke = request.body.yrke;
   const email = request.body.email;
   const banknr = request.body.banknr;
 
   const newStaff = {
     id: staffId,
-    firstName,
-    lastName,
+    fn,
+    ln,
     yrke,
     email,
     banknr,

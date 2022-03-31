@@ -58,11 +58,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "proxy":"https://localhost:5000",
+  "proxy": "https://localhost:5000",
   "author": "",
   "license": "ISC",
   "description": "Server for Hogwarts",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Freddhew/backend-group-project-hogwarts.git"
