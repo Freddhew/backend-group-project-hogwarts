@@ -5,7 +5,7 @@ const bodyParser =require('body-parser')
 const app = express()
 app.use(bodyParser.json())
 
-let staffs = [
+let list = [
   {
     id: 98573215314,
     fn: "Olle",
@@ -48,7 +48,7 @@ router.get("/Staff", (request, response) => {
   response.json({
     status: "success",
     method: request.method,
-    data: staffs,
+    data: list,
   });
 });
 
@@ -67,12 +67,12 @@ router.post("/Staff", (request, response) => {
     banknr: request.body.banknr,
   };
 
-  staffs.push(staff);
+  list.push(staff);
 
   response.json({
     status: "success",
     method: request.method,
-    data: staffs,
+    data: list,
   });
 });
 
@@ -92,9 +92,9 @@ router.put("/Staff/:staffId", (request, response) => {
     email,
     banknr,
   };
-  const staffIndex = staffs.findIndex((staff) => staff.id == staffId);
+  const staffIndex = list.findIndex((staff) => staff.id == staffId);
 
-  staffs[staffIndex] = newStaff;
+  list[staffIndex] = newStaff;
 
   console.log({
     method: request.method,
@@ -110,10 +110,10 @@ router.put("/Staff/:staffId", (request, response) => {
 
 router.delete("/Staff/:staffId", (request, response) => {
   const staffId = request.params.staffId;
-  const staffIndex = staffs.findIndex((staff) => staff.id == staffId);
+  const staffIndex = list.findIndex((staff) => staff.id == staffId);
 
   if (staffIndex > -1) {
-    staffs.splice(staffIndex, 1);
+    list.splice(staffIndex, 1);
   }
 
   response.json({
