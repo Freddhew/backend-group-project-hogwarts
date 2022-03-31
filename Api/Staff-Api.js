@@ -40,49 +40,49 @@ let list = [
   },
 ];
 
-router.get("/Staff", (request, response) => {
+router.get("/Staff", (req, res) => {
   console.log({
-    method: request.method,
+    method: req.method,
   });
 
-  response.json({
+  res.json({
     status: "success",
-    method: request.method,
+    method: req.method,
     data: list,
   });
 });
 
-router.post("/Staff", (request, response) => {
+router.post("/Staff", (req, res) => {
   console.log({
-    method: request.method,
-    body: request.body,
+    method: req.method,
+    body: req.body,
   });
 
   const staff = {
-    id: request.body.id,
-    fn: request.body.fn,
-    ln: request.body.ln,
-    yrke: request.body.yrke,
-    email: request.body.email,
-    banknr: request.body.banknr,
+    id: req.body.id,
+    fn: req.body.fn,
+    ln: req.body.ln,
+    yrke: req.body.yrke,
+    email: req.body.email,
+    banknr: req.body.banknr,
   };
 
   list.push(staff);
 
-  response.json({
+  res.json({
     status: "success",
-    method: request.method,
+    method: req.method,
     data: list,
   });
 });
 
-router.put("/Staff/:staffId", (request, response) => {
-  const staffId = Number(request.params.staffId);
-  const fn = request.body.fn;
-  const ln = request.body.ln;
-  const yrke = request.body.yrke;
-  const email = request.body.email;
-  const banknr = request.body.banknr;
+router.put("/Staff/:staffId", (req, res) => {
+  const staffId = Number(req.params.staffId);
+  const fn = req.body.fn;
+  const ln = req.body.ln;
+  const yrke = req.body.yrke;
+  const email = req.body.email;
+  const banknr = req.body.banknr;
 
   const newStaff = {
     id: staffId,
@@ -97,28 +97,28 @@ router.put("/Staff/:staffId", (request, response) => {
   list[staffIndex] = newStaff;
 
   console.log({
-    method: request.method,
-    body: request.body,
+    method: req.method,
+    body: req.body,
     data: newStaff,
   });
-  response.json({
+  res.json({
     status: "success",
-    method: request.method,
+    method: req.method,
     data: newStaff,
   });
 });
 
-router.delete("/Staff/:staffId", (request, response) => {
-  const staffId = request.params.staffId;
+router.delete("/Staff/:staffId", (req, res) => {
+  const staffId = req.params.staffId;
   const staffIndex = list.findIndex((staff) => staff.id == staffId);
 
   if (staffIndex > -1) {
     list.splice(staffIndex, 1);
   }
 
-  response.json({
+  res.json({
     status: "success",
-    method: request.method,
+    method: req.method,
     data: staffId,
   });
 });
