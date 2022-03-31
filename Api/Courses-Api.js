@@ -2,7 +2,6 @@ const express = require("express");
 const routes = express.Router();
 let courses = [];
 
-// om jag ska hämta lärare från Staff, är de då den routen jag ska ha här eller Courses
 routes.get("/Courses", (req, res) => {
   console.log({
     method: req.method,
@@ -40,7 +39,6 @@ routes.post("/Courses", (req, res) => {
 
 routes.put("/Courses/:courseId", (req, res) => {
   const courseId = Number(req.params.courseId);
-  console.log(courseId);
   const courseName = req.body.courseName;
   const teacher = req.body.teacher;
   const courseLength = req.body.courseLength;
