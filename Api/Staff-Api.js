@@ -6,33 +6,33 @@ let staffs = [
     id: 98573215314,
     firstName: "Gargamel",
     lastName: "Bishop",
-    profession: "lärare",
+    yrke: "lärare",
     email: "Gargamel@bishop123",
-    account: 1245 - 65412378,
+    banknr: 1245 - 65412378,
   },
   {
     id: 789452487568,
     firstName: "Sara",
     lastName: "Greveholm",
-    profession: "lärare",
+    yrke: "lärare",
     email: "greven_Sara@.gmail",
-    account: 3456 - 7895486,
+    banknr: 3456 - 7895486,
   },
   {
     id: 75412457842,
     firstName: "Beder",
     lastName: "Plantage",
-    profession: "Utbildningsledare",
+    yrke: "Utbildningsledare",
     email: "cotton_King@plantagen.com",
-    account: 7894 - 9632584,
+    banknr: 7894 - 9632584,
   },
   {
     id: 754124451240,
     firstName: "Maria",
     lastName: "Andersson",
-    profession: "Utbildningsledare",
+    yrke: "Utbildningsledare",
     email: "mia_andersson@learn_more.com",
-    account: 7894 - 9632584,
+    banknr: 7894 - 9632584,
   },
 ];
 
@@ -58,9 +58,9 @@ router.post("/Staff", (request, response) => {
     id: request.body.id,
     firstName: request.body.firstName,
     lastName: request.body.lastName,
-    profession: request.body.profession,
+    yrke: request.body.yrke,
     email: request.body.email,
-    account: request.body.account,
+    banknr: request.body.banknr,
   };
 
   staffs.push(staff);
@@ -76,17 +76,17 @@ router.put("/Staff/:staffId", (request, response) => {
   const staffId = Number(request.params.staffId);
   const firstName = request.body.firstName;
   const lastName = request.body.lastName;
-  const profession = request.body.profession;
+  const yrke = request.body.yrke;
   const email = request.body.email;
-  const account = request.body.account;
+  const banknr = request.body.banknr;
 
   const newStaff = {
     id: staffId,
     firstName,
     lastName,
-    profession,
+    yrke,
     email,
-    account,
+    banknr,
   };
   const staffIndex = staffs.findIndex((staff) => staff.id == staffId);
 
