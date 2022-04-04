@@ -12,7 +12,7 @@ let list = [
     ln: "Hockeyproffs",
     yrke: "lärare",
     email: "olle@outlook.com",
-    banknr: 1234 - 5555,
+    banknr: '1234 - 5555',
   },
   {
     id: 789452487568,
@@ -20,7 +20,7 @@ let list = [
     ln: "White",
     yrke: "lärare",
     email: "maria.white@gmail.com",
-    banknr: 1234 - 5555,
+    banknr: '1234 - 5555',
   },
   {
     id: 75412457842,
@@ -28,7 +28,7 @@ let list = [
     ln: "Winqvist",
     yrke: "Utbildningsledare",
     email: "Alexander.Wingqvist@altavista.com",
-    banknr: 5566 - 5555,
+    banknr: "5566 - 5555",
   },
   {
     id: 754124451240,
@@ -36,7 +36,7 @@ let list = [
     ln: "Olsson",
     yrke: "Utbildningsledare",
     email: "ida.olsson@learnpoint.com",
-    banknr: 3366 - 5555,
+    banknr: "3366 - 5555",
   },
 ];
 
