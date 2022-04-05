@@ -17,7 +17,7 @@ let educationLists = [
   },
  
 ] 
-  // todos
+ 
 
 router.get('/Education', (request, response)=>{
     console.log({
@@ -31,7 +31,7 @@ router.get('/Education', (request, response)=>{
     })
 })
 
-router.post('/Education',(request,response)=>{            // bodyparser behövs för att rendera text vi vill posta in
+router.post('/Education',(request,response)=>{            
   console.log({
       method: request.method,
       body: request.body,
@@ -53,7 +53,7 @@ educationLists.push(educationList)
   });
 
 })
-// fetch('/api/update/7') // frontend
+
 router.put('/Education/:educationListId', (request,response)=>{
   const educationListId = Number (request.params.educationListId)
 
@@ -68,11 +68,11 @@ router.put('/Education/:educationListId', (request,response)=>{
 
  
 
-  const educationListIndex = educationLists.findIndex((educationList)=>educationList.id === educationListId) // hämtar ut index för todo vi vill uppdatera
-  educationLists[educationListIndex] = newEducationList                                   // i det index vi hämtar ut vill vi skriva över med newTodo
+  const educationListIndex = educationLists.findIndex((educationList)=>educationList.id === educationListId) 
+  educationLists[educationListIndex] = newEducationList                                   
     
   
-  response.json({             // skickar tillbaka svar .status- success, metod -put 
+  response.json({              
     status: 'success',
     method: request.method,
     data: newEducationList,
@@ -87,7 +87,7 @@ router.delete('/Education/:educationListId', (request,response)=>{
   const  educationListIndex = educationLists.findIndex((educationList)=>educationList.id == educationListId)
   educationLists.splice(educationListIndex, 1)
   
-  response.json({             // skickar tillbaka svar .status- success, metod -put 
+  response.json({             
     status: 'success',
     method: request.method,
     data: educationListId,
