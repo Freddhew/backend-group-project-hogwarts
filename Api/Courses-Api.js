@@ -53,6 +53,11 @@ let courses = [
   }
 ];
 
+let teachers = [
+  "Ruth Ravendale",
+  "Professor Severus Snape"
+];
+
 routes.get("/Courses", (req, res) => {
   console.log({
     method: req.method,
