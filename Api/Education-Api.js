@@ -6,6 +6,7 @@ const app = express()
 app.use(bodyParser.json())
 
 let educations = [
+  // Pre added data
   {
     courseId: 9876543,
     courseName: "Application of Dark Arts",
@@ -55,7 +56,7 @@ let educations = [
   }
 ];
 
-router.get('/Education', (request, response)=>{
+router.get('/education', (request, response)=>{
     console.log({
       method: request.method,
 
@@ -67,51 +68,13 @@ router.get('/Education', (request, response)=>{
     })
 })
 
-router.post('/Education',(request,response)=>{            
+router.post('/education',(request,response)=>{            
   console.log({
       method: request.method,
       body: request.body,
-      data: educations,
+
 
   })
-  const educations = {
-    id: request.body.id,
-    teacher: request.body.teacher,
-    education: request.body.education,
-
-  }
-educations.push(educations)
-  
-  response.json({
-    status: 'success',
-    method: request.method,
-    data: educations,
-  });
-
-})
-
-router.put('/Education/:educationsId', (request,response)=>{
-  const educationsId = Number (request.params.educationsId)
-  const teacher = request.body.teacher
-  const educations = request.body.education
-  
-  const newEducations ={
-    educationid:educationsId,
-    teacher: teacher,
-    utbildning:utbildning,
-  }
-
- 
-
-  const educationsIndex = educations.findIndex((educations)=>educations.id === educationsId) 
-  educations[educationsIndex] = newEducations                                   
-    
-  
-  response.json({              
-    status: 'success',
-    method: request.method,
-    data: newEducations,
-  });
 
 })
 
