@@ -2,19 +2,27 @@ const express = require("express");
 const routerApply = express.Router();
 
 let Applys = [
+
   {
     id: 132456654,
-    education: "frontend Utvecklare",
-    firstName: "Jonas",
-    lastName: "Nordström",
-    email: "jonas_88_nordstrom@gmail.com",
+    firstName: "Godstime",
+    lastName: "Nwankwo",
+    email: "g-nwa@jensens.edu",
+    education: "Potion Mastery",
   },
   {
-    id: 12345678,
-    education: "backend Utvecklare",
-    firstName: "Sofie",
+    id: 175689791,
+    firstName: "John",
+    lastName: "Nordström",
+    email: "john_88_nordstrom@gmail.com",
+    education: "Potion Mastery",
+  },
+  {
+    id: 123456780,
+    firstName: "Maria",
     lastName: "Nilsson",
     email: "nilsson88@hotmail.com",
+    education: "Forsight",
   },
 ];
 
